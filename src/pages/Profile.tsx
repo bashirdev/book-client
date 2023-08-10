@@ -1,16 +1,14 @@
 
-import { useEffect } from "react";
-
 import { useDeleteBookMutation , useGetAllBooksQuery } from "../redux/features/bookSlice";
 import { useAppSelector } from "../redux/hooks";
 import { IBookInterface } from "../types/dataTypes";
-import { Link, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 
  
 const Profile = () => {
-    const location=useLocation();
+    
     const {search} =useAppSelector(state=> state?.searchItem)
     const {user}=useAppSelector(state=> state.user)
     const {data, isLoading, isError} = useGetAllBooksQuery(search, {refetchOnMountOrArgChange: true,
@@ -31,7 +29,7 @@ const Profile = () => {
           .then(() => {
             console.log('Book deleted successfully');
             
-            location('/profile');
+          <Link to='/profile'></Link>
           })
           .catch((error) => {
             console.error('Error deleting book:', error);

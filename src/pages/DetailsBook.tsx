@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useGetSingleBookQuery } from '../redux/features/bookSlice';
 const DetailsBook = () => {
     const {id} =useParams()
-    const {data, isLoading, isError} =useGetSingleBookQuery(id)
-    console.log(data?.data.title);
+    const {data} =useGetSingleBookQuery(id)
+ 
     
     return (
         <div>

@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useAppDispatch } from '../redux/hooks';
 import { createUser } from '../redux/user/userSlice';
 
-interface SignupFormInputs {
-    email: string;
-    password: string;
-  }
+// interface SignupFormInputs {
+//     email: string;
+//     password: string;
+//   }
 
 const Signup = () => {
   const [formData, setFormData] = useState({
